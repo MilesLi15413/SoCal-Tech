@@ -83,35 +83,43 @@ body {
   width: 380px;
   height: 380px;
   border-radius: 20px;
+  z-index: 10; /* controls the stackign order of elements. the larger the number the more it takes priority*/
 }
 
 .photo-circle img { /* targets the image */
   width: 100%;
   height: 100%; /* fills the parent container but stretches it*/
     object-fit: cover; /* fill the space but keep the original proportions*/
+    object-position: center center; 
 
 }
 
 .photo-circle-ppl{
-   width: 300px;
-  height: 300px;
+   width: 250px;
+  height: 250px;
   border-radius: 50%; /* turns square into circle*/
   overflow: hidden; /* clips the image so it stays in the circle */
   cursor: pointer; /* shows a hand cursor */
   transition: all 0.4s ease; /* */
-  border: 4px solid #000000; /* adds a blue border */
+  border: 4px solid #4a6fa5; /* adds a blue border */
   position: absolute; /* thru text other elements act like it doesnt exist, ! it positions itself relative to the nearest parent that has relative position*/
-  top: 20%;
-  right: 10%; 
+  bottom: 5%;
+  left: 10%; 
 }
 
 .photo-circle-ppl:hover{
-width: 380px;
-height: 380px; 
+width: 300px;
+height: 300px; 
 border-radius: 20px; 
+z-index: 10; 
 }
-
-
+.photo-circle-ppl img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center center; /* shows the .. .. of the image*/
+  transform: scale(1.5);
+}
 
 
 @media (max-width: 1000px) {
@@ -121,7 +129,27 @@ border-radius: 20px;
 
   .content-sub-title {
     margin-right: 0;
-  }
+}
+.photo-circle{
+  top: 50%; 
+
 
 }
+}
+
+@media (min-width: 1001px ){
+  .photo-circle-ppl:hover{
+    width: 500px;
+    height: 280px;
+  }
+}
+
+@media (min-width: 1250px ){
+  .photo-circle-ppl:hover{
+    width: 700px;
+    height: 280px;
+  }
+}
+
+
 
