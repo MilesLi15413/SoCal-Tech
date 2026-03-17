@@ -50,7 +50,7 @@ body {
   line-height: 1.2;  /* Tighter line spacing */
   margin-bottom: 30px;  /* Space between title and paragraph */
   text-transform: uppercase;  /* ALL CAPS */
-  margin-top: 30px; 
+  margin-top: 100px; 
   margin-right: 50%;
 }
 
@@ -66,8 +66,8 @@ body {
 }
 
 .photo-circle { /* container div (circle border)*/
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%; /* turns square into circle*/
   overflow: hidden; /* clips the image so it stays in the circle */
   cursor: pointer; /* shows a hand cursor */
@@ -81,7 +81,7 @@ body {
 
 .photo-circle:hover { /*styles when you hover over the circle */
   width: 380px;
-  height: 380px;
+  height: 340px;
   border-radius: 20px;
   z-index: 10; /* controls the stackign order of elements. the larger the number the more it takes priority*/
 }
@@ -104,7 +104,7 @@ body {
   border: 4px solid #4a6fa5; /* adds a blue border */
   position: absolute; /* thru text other elements act like it doesnt exist, ! it positions itself relative to the nearest parent that has relative position*/
   bottom: 5%;
-  left: 10%; 
+  right: 10%; 
 }
 
 .photo-circle-ppl:hover{
@@ -132,15 +132,17 @@ z-index: 10;
 }
 .photo-circle{
   top: 50%; 
-
-
+}
+.photo-circle-ppl{
+  right: 50%; 
 }
 }
+
 
 @media (min-width: 1001px ){
   .photo-circle-ppl:hover{
     width: 500px;
-    height: 280px;
+    height: 200px;
   }
 }
 
