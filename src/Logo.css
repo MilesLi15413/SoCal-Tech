@@ -1,35 +1,47 @@
 .logo-container {
-  display: flex;
+  display: flex; /* puts all bars side by side*/
   align-items: center;
-  gap: 6px;
+  gap: 6px; /*  between each bar there is a gap*/
   cursor: pointer;
+  z-index: 10; 
+  position: absolute; 
+   top: 700px;
+   left: 400px;
 }
 
-.bar {
-  width: 18px;
+.bar { /* styles that apply to every bar*/
+  width: 14px;
   border-radius: 20px;
-  transform-origin: bottom center;
-  animation-play-state: paused;
-  transition: transform 0.2s ease;
-}
+  animation-play-state: paused; /* keep the animation frozen on default*/
+} 
 
 .logo-container:hover .bar {
-  animation-play-state: running;
+  animation-play-state: running; 
 }
 
-.b1  { height: 50px; background: #4a8fc1; animation: bounce 1.2s ease-in-out infinite 0.0s; }
-.b2  { height: 80px; background: #3d9ec0; animation: bounce 1.2s ease-in-out infinite 0.1s; }
-.b3  { height: 45px; background: #30adbf; animation: bounce 1.2s ease-in-out infinite 0.2s; }
-.b4  { height: 70px; background: #23bcbe; animation: bounce 1.2s ease-in-out infinite 0.3s; }
-.b5  { height: 30px; background: #1dc5b5; animation: bounce 1.2s ease-in-out infinite 0.4s; }
-.b6  { height: 60px; background: #17ceac; animation: bounce 1.2s ease-in-out infinite 0.5s; }
-.b7  { height: 85px; background: #11d7a3; animation: bounce 1.2s ease-in-out infinite 0.6s; }
-.b8  { height: 45px; background: #0fda9a; animation: bounce 1.2s ease-in-out infinite 0.7s; }
-.b9  { height: 65px; background: #0ddd91; animation: bounce 1.2s ease-in-out infinite 0.8s; }
-.b10 { height: 40px; background: #0be088; animation: bounce 1.2s ease-in-out infinite 0.9s; }
-.b11 { height: 55px; background: #09e37f; animation: bounce 1.2s ease-in-out infinite 1.0s; }
+.b1  { height: 25px; background: #3f74a4; animation: bounce 1.2s ease-in-out infinite 0.1s paused; transform: translateY(2px); }
+.b2  { height: 50px; background: #397ba2; animation: bounce 1.2s ease-in-out infinite 0.2s paused; transform: translateY(0px); }
+.b3  { height: 50px; background: #32809d; animation: bounce 1.2s ease-in-out infinite 0.3s paused; transform: translateY(-10px); }
+.b4  { height: 43px; background: #2c939a; animation: bounce 1.2s ease-in-out infinite 0.4s paused; transform: translateY(7px); }
+.b5  { height: 35px; background: #278894; animation: bounce 1.2s ease-in-out infinite 0.5s paused; transform: translateY(-3px); }
+.b6  { height: 25px; background: #228e8f; animation: bounce 1.2s ease-in-out infinite 0.6s paused; transform: translateY(6px); }
+.b7  { height: 50px; background: #1a948b; animation: bounce 1.2s ease-in-out infinite 0.7s paused; transform: translateY(2px); }
+.b8  { height: 50px; background: #109988; animation: bounce 1.2s ease-in-out infinite 0.8s paused; transform: translateY(-8px); }
+.b9  { height: 43px; background: #0b9f83; animation: bounce 1.2s ease-in-out infinite 0.9s paused; transform: translateY(10px); }
+.b10 { height: 35px; background: #08a27f; animation: bounce 1.2s ease-in-out infinite 1.0s paused; transform: translateY(3px); }
+.b11 { height: 25px; background: #05a87c; animation: bounce 1.2s ease-in-out infinite 1.1s paused; transform: translateY(12px); } 
 
-@keyframes bounce {
-  0%, 100% { transform: scaleY(1); }
-  50%       { transform: scaleY(1.7); }
+
+@keyframes bounce { /* keyframes is a keyword to define a custom animation */
+
+  
+    0%, 100% {transform: translate(0); } /* 0% = start, 100% = end. at the start and end animation, the bar is at default position */
+    50%      {transform: translateY(-30px); } /* at halfway, the bar moves 30px upwards */
+  
+}
+
+@media (max-width: 724px){
+    .logo-container{
+        left: 230px; 
+    }
 }

@@ -13,9 +13,9 @@ function Logo() {
       <div className="bar b8"></div>
       <div className="bar b9"></div>
       <div className="bar b10"></div>
-      <div className="bar b11"></div>
+      <div className="bar b11"></div> 
     </div>
   )
-}
+} 
 
 export default Logo
