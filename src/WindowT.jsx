@@ -14,7 +14,7 @@ function WindowTracker() {
   return (
     <div style={{
       position: 'fixed',
-      top: '45px',
+      top: '300px',
       left: '20px',
       background: 'black',
       color: 'white',

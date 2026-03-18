@@ -4,9 +4,12 @@
   gap: 6px;
   cursor: pointer;
   z-index: 10; 
-  position: absolute; 
-  top: 700px;
-  left: 650px;
+  position: relative; 
+  justify-content: center; 
+   margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 
 .bar {
@@ -38,8 +41,3 @@
 @keyframes bounce-9  { 0%,100% { transform: translateY(3px);   } 50% { transform: translateY(-27px); } }
 @keyframes bounce-10 { 0%,100% { transform: translateY(12px);  } 50% { transform: translateY(-18px); } }
 
-@media (max-width: 724px){
-  .logo-container{
-    left: 230px; 
-  }
-}

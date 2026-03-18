@@ -16,142 +16,238 @@ body {
 }
 
 #root {
-  
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0; 
+  text-align: center; 
 }
 
 .background-section {
   background-color: #e8e8e8;
-  height: 90vh;
+  min-height: 90vh;
   width: 100vw; 
   transform: skewY(-3deg);
   margin-bottom: 90px;
   margin-left: calc(-50vw + 50%);
   margin-top: -100px; 
-  position: relative; /* stays in relative position but and be moved around based on absolute children */
+  position: relative;
+  
 }
 
 .content-wrapper {
-  max-width: 1200px;  /* Keep text contained */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 80px;  /* More padding */
+  padding: 60px 80px;
   transform: skewY(+3deg);
- 
+}
+
+.text-and-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.text-block {
+  flex: 1;
+  max-width: 500px; 
+  
+}
+
+.image-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  position: relative; 
+  overflow: visible; 
 }
 
 .content-title {
   color: #000000;
   font-family: 'Rajdhani', sans-serif;
-  font-weight: 650;  /* Bolder/heavier weight */
-  font-size: 40px;   /* Larger size */
+  font-weight: 650;
+  font-size: 40px;
   text-align: left;
-  line-height: 1.2;  /* Tighter line spacing */
-  margin-bottom: 30px;  /* Space between title and paragraph */
-  text-transform: uppercase;  /* ALL CAPS */
-  margin-top: 100px; 
-  margin-right: 50%;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  margin-top: 100px;
+  
 }
 
 .content-sub-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 17px;   /* Slightly larger */
+  font-size: 17px;
   text-align: left;
-  line-height: 1.6;  /* More breathing room between lines */
-  font-weight: 400;  /* Regular weight */
-   
-  margin-right: 50%;
-
+  line-height: 1.6;
+  font-weight: 400;
 }
 
-.photo-circle { /* container div (circle border)*/
+.photo-circle {
   width: 200px;
   height: 200px;
-  border-radius: 50%; /* turns square into circle*/
-  overflow: hidden; /* clips the image so it stays in the circle */
-  cursor: pointer; /* shows a hand cursor */
-  transition: all 0.4s ease; /* */
-  border: 4px solid #4a6fa5; /* adds a blue border */
-  position: absolute; /* thru text other elements act like it doesnt exist, ! it positions itself relative to the nearest parent that has relative position*/
-  top: 20%;
-  right: 10%; 
-
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 4px solid #4a6fa5;
+  position: relative;
+  transform-origin: top center; 
+  margin-top: 50px;
 }
 
-.photo-circle:hover { /*styles when you hover over the circle */
-  width: 380px;
-  height: 340px;
+.photo-circle:hover {
+  
   border-radius: 20px;
-  z-index: 10; /* controls the stackign order of elements. the larger the number the more it takes priority*/
+  z-index: 10;
+  transform: scale(1.4); 
 }
 
-.photo-circle img { /* targets the image */
+.photo-circle img {
   width: 100%;
-  height: 100%; /* fills the parent container but stretches it*/
-    object-fit: cover; /* fill the space but keep the original proportions*/
-    object-position: center center; 
-
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; 
 }
 
-.photo-circle-ppl{
-   width: 250px;
+.photo-circle-ppl {
+  width: 250px;
   height: 250px;
-  border-radius: 50%; /* turns square into circle*/
-  overflow: hidden; /* clips the image so it stays in the circle */
-  cursor: pointer; /* shows a hand cursor */
-  transition: all 0.4s ease; /* */
-  border: 4px solid #4a6fa5; /* adds a blue border */
-  position: absolute; /* thru text other elements act like it doesnt exist, ! it positions itself relative to the nearest parent that has relative position*/
-  bottom: 5%;
-  right: 10%; 
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 4px solid #4a6fa5;
+  position: relative;
+  transform-origin: right center; 
 }
 
-.photo-circle-ppl:hover{
-width: 300px;
-height: 300px; 
-border-radius: 20px; 
-z-index: 10; 
+.photo-circle-ppl:hover { 
+  border-radius: 20px; 
+  z-index: 10; 
+  transform: scale(1.2); 
 }
-.photo-circle-ppl img{
+
+.photo-circle-ppl img {
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  object-position: center center; /* shows the .. .. of the image*/
+  object-position: center center;
   transform: scale(1.5);
 }
 
-
 @media (max-width: 1000px) {
+  .text-and-images {
+    flex-direction: column;
+  }
+
   .content-title {
-    margin-right: 0;
+    margin-top: 40px;
   }
 
-  .content-sub-title {
-    margin-right: 0;
-}
-.photo-circle{
-  top: 50%; 
-}
-.photo-circle-ppl{
-  right: 50%; 
-}
-}
-
-
-@media (min-width: 1001px ){
-  .photo-circle-ppl:hover{
-    width: 500px;
-    height: 200px;
-  }
-}
-
-@media (min-width: 1250px ){
-  .photo-circle-ppl:hover{
-    width: 700px;
-    height: 280px;
+  .image-block {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 
+.title-two{
+  color: #000000;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 580;
+  font-size: 35px;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 30px;
+  max-width: 750px; 
+  margin-left: auto;
+  margin-right: auto;
 
+
+
+}
+
+.highlight{
+  background: linear-gradient(to right, #05a87c, #3f74a4); /* creates a gradient going from one color fading into the next*/
+  color: white; /*makes the text inside white */
+  padding: 4px 3px; 
+  display: inline-block; /* make the box only as big as the text inside it*/ 
+}
+
+.streak{ /* parent invisble box not the actual underline */
+  position: relative; 
+  display: inline-block; 
+   
+  width: fit content; /* fits as wide as the <span className> </span> */
+  
+}
+.streak::after { /* fake element, actual line*/
+  content: ''; /* required to make the element appear */
+  position: absolute;
+  bottom: -2px;
+  left: 0; /* starts at the left edge of streak*/
+  width: 40%; 
+  height: 4px;
+  background: linear-gradient(to right, #3f74a4, #05a87c);
+  border-radius: 2px;
+  animation: slideStreak 1.5s ease-in-out infinite; 
+  /* name | the duration of animation | starts slow and speeds up then slows down | infinite
+
+  */
+  
+}
+
+@keyframes slideStreak {
+  0%   { transform: translateX(-10%); opacity: 0; } /* the streak starts fully to the left and is invisible*/
+  5%  { opacity: 1; } /* by 5% of the way through, the streak fades in */
+  70% {transform: translateX(150%); opacity: 1;}
+  100% { transform: translateX(150%); opacity: 0; } /* once the streak has travelled 350% of its own width, dissapear */
+}
+
+.sponsor-section {
+  background-color: #f5faf8;
+  width: 100%;
+  padding: 60px 0;
+  min-height: 500px; 
+  margin-top: 50px;
+}
+
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.star-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #4a9e8a;
+  animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+
+.sponsor-text{
+ color: #000000;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 580;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 30px;
+  max-width: 750px; 
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+  position: relative;
+}
