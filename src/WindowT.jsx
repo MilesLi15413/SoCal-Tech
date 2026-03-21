@@ -14,7 +14,7 @@ function WindowTracker() {
   return (
     <div style={{
       position: 'fixed',
-      top: '300px',
+      top: '1000px',
       left: '20px',
       background: 'black',
       color: 'white',
@@ -23,6 +23,7 @@ function WindowTracker() {
       zIndex: 9999,
       fontFamily: 'monospace',
       fontSize: '14px'
+      
     }}>
       {size.w} x {size.h}
     </div>
